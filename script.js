@@ -37,18 +37,27 @@
 // });
 
 var cat = {
-  name: "Fluffy",
+  name: { first: "Fluffy", last: "LaBeouf" },
   color: "White"
 };
 
-Object.defineProperty(cat, "name", { configurable: false });
-Object.defineProperty(cat, "name", { configurable: true });
-Object.defineProperty(cat, "name", { enumerable: false });
+Object.defineProperty(cat, "fullName", {
+  get: function() {
+    return this.name.first + " " + this.name.last;
+  },
+  set: function(value) {
+    var nameList = value.split(" ");
+    this.name.first = nameList[0];
+    this.name.last = nameList[1];
+  }
+});
 
-for (const propertyName in cat) {
-  display(propertyName + ": " + cat[propertyName]);
-}
+display(cat.fullName);
+display(cat.name.first);
+display(cat.name.last);
 
-display(Object.keys(cat));
+cat.fullName = "Ray Cho";
 
-display(JSON.stringify(cat));
+display(cat.fullName);
+display(cat.name.first);
+display(cat.name.last);
