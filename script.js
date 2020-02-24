@@ -1,6 +1,15 @@
 // display("Hello World");
 "use strict";
 
-var cat = { name: "Fluffy", color: "White" };
+var cat = {
+  name: "Fluffy",
+  color: "White",
+  speak: function() {
+    display("Meeooooooow");
+  }
+};
 
-display(cat.name);
+cat.age = 0.9;
+
+display(cat.age);
+cat.speak();
