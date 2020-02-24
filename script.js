@@ -41,6 +41,4 @@ var cat = {
   color: "White"
 };
 
-cat["Eye Color"] = "Gold";
-
-display(cat["Eye Color"]);
+display(Object.getOwnPropertyDescriptor(cat, "name"));
