@@ -41,4 +41,8 @@ var cat = {
   color: "White"
 };
 
+Object.defineProperty(cat, "name", { writable: false });
+
+cat.name = "Poppy";
+
 display(Object.getOwnPropertyDescriptor(cat, "name"));
