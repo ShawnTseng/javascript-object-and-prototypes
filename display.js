@@ -26,5 +26,9 @@ function displayValue(value, addMargin, addPadding) {
     div.style.paddingLeft = "30px";
   }
   div.innerText = value;
-  document.body.appendChild(div);;
+  document.body.appendChild(div);
+}
+
+function getTypeName(object) {
+  return object.constructor.name;
 }
