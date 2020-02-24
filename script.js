@@ -41,8 +41,12 @@ var cat = {
   color: "White"
 };
 
-Object.defineProperty(cat, "name", { writable: false });
+Object.defineProperty(cat, "name", { enumerable: false });
 
-cat.name = "Poppy";
+for (const propertyName in cat) {
+  display(propertyName + ": " + cat[propertyName]);
+}
 
-display(Object.getOwnPropertyDescriptor(cat, "name"));
+display(Object.keys(cat));
+
+display(JSON.stringify(cat));
