@@ -36,17 +36,11 @@
 //   }
 // });
 
-class Cat {
-  constructor(name, color) {
-    this.name = name;
-    this.color = color;
-  }
+var cat = {
+  name: "Fluffy",
+  color: "White"
+};
 
-  speak() {
-    display("Meeoooooooow");
-  }
-}
+cat["Eye Color"] = "Gold";
 
-var cat = new Cat("Fluffy", "White");
-
-display(cat);
+display(cat["Eye Color"]);
