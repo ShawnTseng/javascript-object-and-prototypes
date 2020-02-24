@@ -17,7 +17,7 @@ function Cat(name, color) {
   this.color = color;
 }
 
-Cat.prototype.age = 1;
+Cat.prototype.age = 2;
 
 var fluffy = new Cat("Fluffy", "White");
 var soy = new Cat("Soy", "Grey");
@@ -26,3 +26,19 @@ display(Cat.prototype);
 display(fluffy.__proto__);
 display(soy.__proto__);
 display(Cat.prototype === fluffy.__proto__);
+display(fluffy.age);
+display(soy.age);
+
+display(Object.keys(fluffy));
+display(fluffy.hasOwnProperty('age'));
+display(fluffy.age);
+display(fluffy.__proto__.age);
+display(soy.age);
+
+fluffy.age = 3;
+
+display(Object.keys(fluffy));
+display(fluffy.hasOwnProperty('age'));
+display(fluffy.age);
+display(fluffy.__proto__.age);
+display(soy.age);
