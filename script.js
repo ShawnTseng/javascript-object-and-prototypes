@@ -41,6 +41,8 @@ var cat = {
   color: "White"
 };
 
+Object.defineProperty(cat, "name", { configurable: false });
+Object.defineProperty(cat, "name", { configurable: true });
 Object.defineProperty(cat, "name", { enumerable: false });
 
 for (const propertyName in cat) {
