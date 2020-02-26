@@ -14,7 +14,6 @@ Cat.prototype = { age: 5 };
 
 var showbell = new Cat("Snowbell", "White");
 
-display(fluffy.age);
-display(muffin.age);
-display(showbell.age);
-display(Cat.prototype.age);
+display(fluffy.__proto__);
+display(fluffy.__proto__.__proto__);
+display(fluffy.__proto__.__proto__.__proto__);
