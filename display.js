@@ -11,7 +11,9 @@ function display() {
 function displayObject(object) {
   displayValue(getTypeName(object) + " {");
   for (const propertyName in object) {
-    displayValue(propertyName + ": " + object[propertyName]);
+    if (propertyName !== "constructor") {
+      displayValue(propertyName + ": " + object[propertyName]);
+    }
   }
   displayValue("}", true);
 }
@@ -30,5 +32,7 @@ function displayValue(value, addMargin, addPadding) {
 }
 
 function getTypeName(object) {
-  return object.constructor.name;
+  var funcNameRegex = /function (.1,)\(/;
+  var results = funcNameRegex.exec(object.constructor.toString());
+  return results && results.length > 1 ? results[1] : "";
 }
